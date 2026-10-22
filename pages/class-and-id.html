@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class &amp; ID Selectors | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* --- Class selector demo --- */
+    .highlight {
+      background-color: #ffd166;
+      color: #023e8a;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+    }
+
+    .fancy-font {
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+
+    /* --- ID selector demo --- */
+    #primary-box {
+      border: 3px dashed #e63946;
+      padding: 0.8rem 1rem;
+      width: fit-content;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    #secondary-box {
+      text-decoration: underline;
+      background-color: #ffc8dd;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    /* --- overflow demo container --- */
+    .overflow-demo {
+      width: 400px;
+      height: 80px;
+      overflow: auto;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      padding: 0.5rem;
+      background: #fff;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Class &amp; ID Selectors</h1>
+
+  <!-- Class -->
+  <div class="section">
+    <h2>Class Selector ( . )</h2>
+    <p>
+      A class can be reused on <em>multiple</em> elements, and one element can
+      carry <em>multiple</em> classes (space-separated).
+    </p>
+
+    <div class="highlight">I use class <code>.highlight</code></div>
+    <div class="highlight fancy-font">I use both <code>.highlight</code> and <code>.fancy-font</code></div>
+
+    <pre>/* CSS */
+.highlight  { background-color: #ffd166; }
+.fancy-font { font-style: italic; }
+
+&lt;!-- HTML --&gt;
+&lt;div class="highlight"&gt;One class&lt;/div&gt;
+&lt;div class="highlight fancy-font"&gt;Two classes&lt;/div&gt;</pre>
+  </div>
+
+  <!-- ID -->
+  <div class="section">
+    <h2>ID Selector ( # )</h2>
+    <p>
+      An ID must be <em>unique</em> per page — only one element may use a
+      given ID. An element can only carry <em>one</em> ID at a time.
+    </p>
+
+    <div id="primary-box">I use id <code>#primary-box</code></div>
+    <div id="secondary-box">I use id <code>#secondary-box</code></div>
+
+    <pre>/* CSS */
+#primary-box   { border: 3px dashed #e63946; }
+#secondary-box { background-color: #ffc8dd; }
+
+&lt;!-- HTML --&gt;
+&lt;div id="primary-box"&gt;...&lt;/div&gt;
+&lt;div id="secondary-box"&gt;...&lt;/div&gt;</pre>
+  </div>
+
+  <!-- Overflow -->
+  <div class="section">
+    <h2>Bonus: overflow property</h2>
+    <p>Controls what happens when content exceeds its container.</p>
+
+    <p><strong>overflow: auto</strong> (scrollbar appears only when needed):</p>
+    <div class="overflow-demo">
+      Themes and styles help keep your document coordinated. When you click Design
+      and choose a new Theme, the pictures, charts, and SmartArt graphics change to
+      match your new theme. When you apply styles, your headings change to match the
+      new theme. Save time in Word with new buttons that show up where you need them.
+    </div>
+
+    <pre>.overflow-demo {
+  width: 400px;
+  height: 80px;
+  overflow: auto;  /* hidden | scroll | visible | auto */
+}</pre>
+  </div>
+
+  <!-- Summary table -->
+  <div class="section">
+    <h2>Class vs ID — Quick Reference</h2>
+    <pre>
+Feature          Class ( . )         ID ( # )
+───────────────────────────────────────────────
+Reusability      Many elements       One element per page
+Multi-apply      Multiple per tag    Only one per tag
+CSS symbol       .classname          #idname
+Specificity      0-1-0               0-1-0-0 (higher)
+Best use         Styling groups      Anchor links, JS hooks
+    </pre>
+  </div>
+
+</body>
+</html>

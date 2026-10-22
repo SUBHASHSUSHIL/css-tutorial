@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Tutorial</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ---- Hero ---- */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(135deg, #023e8a, #0077b6);
+      border-radius: 12px;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      color: #fff;
+      border-bottom: none;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      color: #caf0f8;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    /* ---- Topic grid ---- */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .topic-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s, box-shadow 0.15s;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 119, 182, 0.18);
+    }
+
+    .topic-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .topic-card h2 {
+      font-size: 1rem;
+      margin: 0 0 0.3rem;
+      color: #023e8a;
+    }
+
+    .topic-card p {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      padding: 1.5rem 0;
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>CSS Tutorial</h1>
+    <p>A hands-on reference for essential HTML &amp; CSS concepts</p>
+  </div>
+
+  <div class="topic-grid">
+
+    <a class="topic-card" href="pages/headings.html">
+      <span class="topic-icon">🔤</span>
+      <div>
+        <h2>Headings</h2>
+        <p>HTML heading levels h1–h6, semantic hierarchy, and best practices.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/paragraph.html">
+      <span class="topic-icon">📝</span>
+      <div>
+        <h2>Paragraph &amp; Inline Tags</h2>
+        <p>b, strong, i, em, u, del, mark, sup, sub, abbr, pre and more.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/css-types.html">
+      <span class="topic-icon">🎨</span>
+      <div>
+        <h2>Types of CSS</h2>
+        <p>Inline, internal (embedded), and external stylesheets with the cascade order.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/font-related.html">
+      <span class="topic-icon">🔡</span>
+      <div>
+        <h2>Font Properties</h2>
+        <p>font-family, font-size, font-weight, font-style, font-variant, font-stretch.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/class-and-id.html">
+      <span class="topic-icon">🏷️</span>
+      <div>
+        <h2>Class &amp; ID Selectors</h2>
+        <p>Difference between . and # selectors, specificity, and overflow.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/margin-padding-border.html">
+      <span class="topic-icon">📦</span>
+      <div>
+        <h2>Margin, Padding &amp; Border</h2>
+        <p>The CSS box model, shorthand syntax, border styles, and border-radius.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/display.html">
+      <span class="topic-icon">🖥️</span>
+      <div>
+        <h2>Display Property</h2>
+        <p>block, inline, inline-block, none, visibility, float and clear.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/cursor-types.html">
+      <span class="topic-icon">🖱️</span>
+      <div>
+        <h2>Cursor Types</h2>
+        <p>All CSS cursor values with a live hover demo for each one.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/types-of-tags.html">
+      <span class="topic-icon">🏗️</span>
+      <div>
+        <h2>Types of Tags</h2>
+        <p>Semantic vs non-semantic, block vs inline, container vs void tags.</p>
+      </div>
+    </a>
+
+    <a class="topic-card" href="pages/audio-video.html">
+      <span class="topic-icon">🎬</span>
+      <div>
+        <h2>Audio &amp; Video</h2>
+        <p>Native &lt;audio&gt;, &lt;video&gt;, &lt;iframe&gt;, and &lt;object&gt; elements.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>CSS Tutorial · HTML &amp; CSS fundamentals reference</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Property | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* --- Shared box style for demos --- */
+    .box {
+      width: 100px;
+      height: 70px;
+      border: 2px solid #0077b6;
+      background-color: #caf0f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* --- Block demo --- */
+    .demo-block .box {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* --- Inline demo --- */
+    .demo-inline .box {
+      display: inline;
+      /* width/height ignored in inline mode */
+      width: auto;
+      height: auto;
+      background: #ffd166;
+      padding: 4px 8px;
+    }
+
+    /* --- Inline-block demo --- */
+    .demo-inline-block .box {
+      display: inline-block;
+      margin: 4px;
+    }
+
+    /* --- none / visibility demos --- */
+    .demo-none-area {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .box-none:hover    { display: none; }
+    .box-hidden:hover  { visibility: hidden; }
+
+    .box-none,
+    .box-hidden {
+      width: 100px;
+      height: 70px;
+      border: 2px solid #0077b6;
+      background: #caf0f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* --- float demo --- */
+    .float-container { overflow: hidden; border: 1px dashed #aaa; padding: 8px; }
+    .float-left  { float: left;  width: 80px; height: 60px; background: #ffd166; border: 2px solid #e29000; margin-right: 10px; display: flex; align-items: center; justify-content: center; }
+    .float-right { float: right; width: 80px; height: 60px; background: #06d6a0; border: 2px solid #048a55; margin-left: 10px;  display: flex; align-items: center; justify-content: center; }
+    .clear-both  { clear: both; }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Display Property</h1>
+
+  <!-- block -->
+  <div class="section">
+    <h2>display: block</h2>
+    <p>Each box starts on a new line and stretches to full width.</p>
+    <div class="demo-block">
+      <div class="box">Block 1</div>
+      <div class="box">Block 2</div>
+      <div class="box">Block 3</div>
+    </div>
+    <pre>div { display: block; } /* default for div, p, h1–h6, etc. */</pre>
+  </div>
+
+  <!-- inline -->
+  <div class="section">
+    <h2>display: inline</h2>
+    <p>Elements sit side-by-side. <strong>width and height are ignored</strong>; size is determined by content.</p>
+    <div class="demo-inline">
+      <div class="box">Inline 1</div>
+      <div class="box">Inline 2</div>
+      <div class="box">Inline 3</div>
+    </div>
+    <pre>span { display: inline; } /* default for span, a, img, etc. */</pre>
+  </div>
+
+  <!-- inline-block -->
+  <div class="section">
+    <h2>display: inline-block</h2>
+    <p>Best of both worlds — flows inline <em>and</em> respects width/height.</p>
+    <div class="demo-inline-block">
+      <div class="box">IB 1</div>
+      <div class="box">IB 2</div>
+      <div class="box">IB 3</div>
+      <div class="box">IB 4</div>
+    </div>
+    <pre>button { display: inline-block; width: 100px; height: 40px; }</pre>
+  </div>
+
+  <!-- none vs hidden -->
+  <div class="section">
+    <h2>display: none vs visibility: hidden</h2>
+    <p>Hover over each box to see the difference:</p>
+    <div class="demo-none-area">
+      <div class="box-none">Hover me<br><small>(display:none)</small></div>
+      <div class="box-hidden">Hover me<br><small>(visibility:hidden)</small></div>
+      <div style="width:100px;height:70px;border:2px dashed #aaa;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#888;">
+        neighbour box
+      </div>
+    </div>
+    <pre>/* Removes element AND its space */
+.hidden-none { display: none; }
+
+/* Hides element but KEEPS its space */
+.hidden-vis  { visibility: hidden; }</pre>
+  </div>
+
+  <!-- float -->
+  <div class="section">
+    <h2>float &amp; clear</h2>
+    <p>
+      <code>float</code> was the old layout tool before Flexbox/Grid. Still
+      useful for wrapping text around images.
+    </p>
+    <div class="float-container">
+      <div class="float-left">float: left</div>
+      <div class="float-right">float: right</div>
+      <p>
+        This text flows around the floated boxes. Themes and styles help keep
+        your document coordinated. When you click Design and choose a new Theme
+        the pictures and charts change to match.
+      </p>
+      <div class="clear-both"></div>
+    </div>
+    <pre>.image  { float: left; margin-right: 12px; }
+.footer { clear: both; } /* prevents collapsing parent */</pre>
+  </div>
+
+  <!-- cursor -->
+  <div class="section">
+    <h2>cursor</h2>
+    <p>Controls the mouse cursor shape when hovering an element.</p>
+    <pre>div { cursor: pointer; } /* hand icon */
+div { cursor: wait; }    /* spinner */
+div { cursor: not-allowed; }</pre>
+    <p>→ See the full cursor showcase on the <a href="cursor-types.html">Cursor Types</a> page.</p>
+  </div>
+
+</body>
+</html>

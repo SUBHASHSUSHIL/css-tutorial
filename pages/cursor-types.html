@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Types | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .cursor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .cursor-box {
+      background-color: #fff;
+      border: 2px solid #0077b6;
+      border-radius: 8px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #023e8a;
+      transition: background-color 0.2s;
+    }
+
+    .cursor-box:hover {
+      background-color: #caf0f8;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>CSS Cursor Types</h1>
+
+  <p class="section" style="margin-bottom:1rem;">
+    Hover over each box to see the cursor change. The <code>cursor</code> property
+    controls which mouse pointer icon is shown when the user hovers an element.
+  </p>
+
+  <div class="section">
+    <div class="cursor-grid">
+      <div class="cursor-box" style="cursor: auto;">auto</div>
+      <div class="cursor-box" style="cursor: default;">default</div>
+      <div class="cursor-box" style="cursor: pointer;">pointer</div>
+      <div class="cursor-box" style="cursor: crosshair;">crosshair</div>
+      <div class="cursor-box" style="cursor: move;">move</div>
+      <div class="cursor-box" style="cursor: text;">text</div>
+      <div class="cursor-box" style="cursor: wait;">wait</div>
+      <div class="cursor-box" style="cursor: progress;">progress</div>
+      <div class="cursor-box" style="cursor: help;">help</div>
+      <div class="cursor-box" style="cursor: not-allowed;">not-allowed</div>
+      <div class="cursor-box" style="cursor: zoom-in;">zoom-in</div>
+      <div class="cursor-box" style="cursor: zoom-out;">zoom-out</div>
+      <div class="cursor-box" style="cursor: grab;">grab</div>
+      <div class="cursor-box" style="cursor: grabbing;">grabbing</div>
+      <div class="cursor-box" style="cursor: all-scroll;">all-scroll</div>
+      <div class="cursor-box" style="cursor: col-resize;">col-resize</div>
+      <div class="cursor-box" style="cursor: row-resize;">row-resize</div>
+      <div class="cursor-box" style="cursor: n-resize;">n-resize</div>
+      <div class="cursor-box" style="cursor: s-resize;">s-resize</div>
+      <div class="cursor-box" style="cursor: e-resize;">e-resize</div>
+      <div class="cursor-box" style="cursor: w-resize;">w-resize</div>
+      <div class="cursor-box" style="cursor: ne-resize;">ne-resize</div>
+      <div class="cursor-box" style="cursor: nw-resize;">nw-resize</div>
+      <div class="cursor-box" style="cursor: se-resize;">se-resize</div>
+      <div class="cursor-box" style="cursor: sw-resize;">sw-resize</div>
+      <div class="cursor-box" style="cursor: nesw-resize;">nesw-resize</div>
+      <div class="cursor-box" style="cursor: nwse-resize;">nwse-resize</div>
+      <div class="cursor-box" style="cursor: cell;">cell</div>
+      <div class="cursor-box" style="cursor: copy;">copy</div>
+      <div class="cursor-box" style="cursor: alias;">alias</div>
+      <div class="cursor-box" style="cursor: context-menu;">context-menu</div>
+      <div class="cursor-box" style="cursor: vertical-text;">vertical-text</div>
+      <div class="cursor-box" style="cursor: no-drop;">no-drop</div>
+      <div class="cursor-box" style="cursor: none;">none (hidden)</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Usage</h2>
+    <pre>/* Apply to any element */
+button  { cursor: pointer; }
+.loading { cursor: wait; }
+.disabled { cursor: not-allowed; }
+
+/* Custom cursor using an image */
+.custom { cursor: url('cursor.png'), auto; }</pre>
+  </div>
+
+</body>
+</html>

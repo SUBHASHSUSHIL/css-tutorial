@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Types | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* --- Demo: Internal / Embedded Style --- */
+    .demo-internal {
+      background-color: #caf0f8;
+      border: 4px solid #0077b6;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Demo: Inline vs Internal comparison boxes --- */
+    .type-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+
+    .type-card h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Types of CSS</h1>
+
+  <!-- 1. Inline -->
+  <div class="section">
+    <div class="type-card">
+      <h2>1. Inline Style</h2>
+      <p>
+        Applied directly on an element using the <code>style</code> attribute.
+        Inline styles have the highest specificity but break the separation of
+        concerns and are hard to maintain at scale.
+      </p>
+      <p>Example element with inline style:</p>
+      <p style="background-color: #ffb703; padding: 0.5rem; border-radius: 4px; width: fit-content;">
+        I am styled with an inline style.
+      </p>
+      <pre>&lt;p style="background-color: #ffb703; padding: 0.5rem;"&gt;...&lt;/p&gt;</pre>
+    </div>
+
+    <!-- 2. Internal -->
+    <div class="type-card">
+      <h2>2. Internal (Embedded) Style</h2>
+      <p>
+        Placed inside a <code>&lt;style&gt;</code> tag in the
+        <code>&lt;head&gt;</code>. Good for single-page demos; not ideal for
+        multi-page sites because styles cannot be shared.
+      </p>
+      <div class="demo-internal">I am styled via an internal (embedded) stylesheet.</div>
+      <pre>&lt;style&gt;
+  .demo-internal {
+    background-color: #caf0f8;
+    border: 4px solid #0077b6;
+  }
+&lt;/style&gt;</pre>
+    </div>
+
+    <!-- 3. External -->
+    <div class="type-card">
+      <h2>3. External Stylesheet</h2>
+      <p>
+        A separate <code>.css</code> file linked via <code>&lt;link&gt;</code>.
+        This is the recommended approach for real projects — one stylesheet
+        can style every page and browsers cache it for performance.
+      </p>
+      <pre>&lt;!-- Method 1: link tag (recommended) --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+&lt;!-- Method 2: @import inside a style block (avoid in production) --&gt;
+&lt;style&gt;
+  @import "styles.css";
+&lt;/style&gt;</pre>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section">
+    <h2>Cascade Order (lowest → highest priority)</h2>
+    <pre>
+1. Browser default styles
+2. External stylesheet
+3. Internal (embedded) stylesheet
+4. Inline style    ← wins
+
+Note: CSS is case-sensitive.
+      Every declaration must end with a semicolon ( ; ).
+      Multi-word property values should use hyphens: font-size, not fontSize.
+    </pre>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio &amp; Video | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .media-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .media-card h3 {
+      margin-top: 0;
+    }
+
+    audio,
+    video {
+      display: block;
+      margin: 0.8rem 0;
+      border-radius: 6px;
+    }
+
+    video {
+      max-width: 100%;
+    }
+
+    iframe {
+      display: block;
+      border: none;
+      border-radius: 8px;
+      margin: 0.8rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Audio &amp; Video in HTML</h1>
+
+  <!-- Audio -->
+  <div class="section">
+    <h2>&lt;audio&gt; Tag</h2>
+    <p>Embeds audio with native browser controls. Always provide a fallback message for unsupported browsers.</p>
+
+    <div class="media-card">
+      <h3>Basic audio player</h3>
+      <audio controls>
+        <source src="../audio/sample.mp3" type="audio/mpeg">
+        <source src="../audio/sample.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+      <pre>&lt;audio controls&gt;
+  &lt;source src="audio/sample.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio/sample.ogg" type="audio/ogg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</pre>
+    </div>
+
+    <div class="media-card">
+      <h3>Useful attributes</h3>
+      <pre>controls  — show play/pause/volume UI
+autoplay  — start playing automatically (often blocked by browsers)
+muted     — start muted (required for autoplay in most browsers)
+loop      — repeat when finished
+preload   — "none" | "metadata" | "auto"</pre>
+    </div>
+  </div>
+
+  <!-- Video -->
+  <div class="section">
+    <h2>&lt;video&gt; Tag</h2>
+
+    <div class="media-card">
+      <h3>Basic video player (local file)</h3>
+      <video width="320" height="200" controls muted poster="../images/poster.jpg">
+        <source src="../video/example.mp4" type="video/mp4">
+        <source src="../video/example.webm" type="video/webm">
+        Your browser does not support the video element.
+      </video>
+      <pre>&lt;video width="320" height="200" controls muted poster="poster.jpg"&gt;
+  &lt;source src="video/example.mp4" type="video/mp4"&gt;
+  &lt;source src="video/example.webm" type="video/webm"&gt;
+  Your browser does not support the video element.
+&lt;/video&gt;</pre>
+    </div>
+
+    <div class="media-card">
+      <h3>Useful attributes</h3>
+      <pre>controls  — show player UI
+autoplay  — auto-start (needs muted to work without user gesture)
+muted     — start silenced
+loop      — repeat
+poster    — image shown before playback starts
+width / height — dimensions in px (use CSS for responsiveness)</pre>
+    </div>
+  </div>
+
+  <!-- iframe embed -->
+  <div class="section">
+    <h2>&lt;iframe&gt; — Embed External Content</h2>
+    <p>
+      Use <code>&lt;iframe&gt;</code> to embed YouTube videos, maps, or other
+      web content. Always set <code>title</code> for accessibility.
+    </p>
+
+    <div class="media-card">
+      <h3>YouTube embed (copy the embed URL from "Share → Embed")</h3>
+      <iframe
+        width="320"
+        height="200"
+        src="https://www.youtube.com/embed/t0Q2otsqC4I"
+        title="Tom &amp; Jerry Classic Cartoon"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <pre>&lt;iframe
+  width="320"
+  height="200"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Video title"
+  allowfullscreen&gt;
+&lt;/iframe&gt;</pre>
+    </div>
+  </div>
+
+  <!-- object tag -->
+  <div class="section">
+    <h2>&lt;object&gt; Tag</h2>
+    <p>
+      An older, more general embedding tag. Prefer <code>&lt;video&gt;</code>
+      for video and <code>&lt;iframe&gt;</code> for web content.
+    </p>
+    <pre>&lt;object data="video/example.mp4" type="video/mp4" width="320" height="200"&gt;
+  &lt;p&gt;Your browser cannot play this video.&lt;/p&gt;
+&lt;/object&gt;</pre>
+  </div>
+
+</body>
+</html>

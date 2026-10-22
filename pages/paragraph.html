@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paragraph Tags | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .demo-p {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .tag-label {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.8rem;
+      background: #e9ecef;
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin-right: 4px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Paragraph &amp; Inline Text Tags</h1>
+
+  <div class="section">
+    <p>HTML provides many inline tags to add semantic meaning to text inside paragraphs.</p>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;b&gt;</span>
+      <p>This word is <b>bold</b> using the presentational <code>&lt;b&gt;</code> tag.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;strong&gt;</span>
+      <p>This word is <strong>strongly emphasised</strong> — use this for semantic importance.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;i&gt;</span>
+      <p>This text is <i>italic</i> using the presentational <code>&lt;i&gt;</code> tag.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;em&gt;</span>
+      <p>This text is <em>emphasised</em> — screen readers stress this word.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;u&gt;</span>
+      <p>This text is <u>underlined</u>. Avoid using this for links — it causes confusion.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;del&gt;</span>
+      <p>This text is <del>deleted / struck through</del> using <code>&lt;del&gt;</code>.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;s&gt;</span>
+      <p>This text is <s>no longer accurate</s> using <code>&lt;s&gt;</code> (presentational strikethrough).</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;mark&gt;</span>
+      <p>This text is <mark>highlighted</mark> using <code>&lt;mark&gt;</code>.</p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;sup&gt; / &lt;sub&gt;</span>
+      <p>
+        Chemical formula: H<sub>2</sub>O &nbsp;|&nbsp;
+        Math: x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup>
+      </p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;abbr&gt;</span>
+      <p>
+        Hover over this abbreviation:
+        <abbr title="Content Delivery Network">CDN</abbr>
+      </p>
+    </div>
+
+    <div class="demo-p">
+      <span class="tag-label">&lt;pre&gt;</span>
+      <p>The <code>&lt;pre&gt;</code> tag preserves whitespace and line breaks:</p>
+      <pre>
+Name:    Jane Doe
+Email:   jane@example.com
+City:    Faridabad
+      </pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>b vs strong / i vs em</h2>
+    <pre>
+&lt;b&gt;  — bold, purely visual (no extra meaning)
+&lt;strong&gt; — bold + semantic importance (prefer this)
+
+&lt;i&gt;  — italic, purely visual
+&lt;em&gt;  — italic + semantic stress (prefer this)
+    </pre>
+  </div>
+
+</body>
+</html>

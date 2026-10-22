@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Types of HTML Tags | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .tag-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .tag-table th,
+    .tag-table td {
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #ddd;
+    }
+
+    .tag-table th {
+      background-color: #0077b6;
+      color: #fff;
+    }
+
+    .tag-table tr:nth-child(even) {
+      background-color: #f0f8ff;
+    }
+
+    /* Block vs Inline demo */
+    .block-demo > div {
+      background: #caf0f8;
+      border: 2px solid #0077b6;
+      padding: 0.4rem 0.8rem;
+      margin-bottom: 4px;
+      border-radius: 4px;
+    }
+
+    .inline-demo {
+      background: #fff3cd;
+      padding: 0.6rem;
+      border-radius: 6px;
+    }
+
+    .inline-demo span,
+    .inline-demo a,
+    .inline-demo strong {
+      background: #ffd166;
+      border: 1px solid #e29000;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin: 2px;
+    }
+
+    /* Container vs non-container */
+    .container-demo {
+      background: #d8f3dc;
+      border: 2px solid #52b788;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Types of HTML Tags</h1>
+
+  <!-- Semantic vs Non-Semantic -->
+  <div class="section">
+    <h2>1. Semantic vs Non-Semantic Tags</h2>
+    <p>
+      A <strong>semantic</strong> tag clearly describes its purpose to both the
+      browser and the developer. A <strong>non-semantic</strong> tag says nothing
+      about its content.
+    </p>
+    <table class="tag-table">
+      <thead>
+        <tr>
+          <th>Semantic</th>
+          <th>Non-Semantic</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>&lt;header&gt;</code></td><td><code>&lt;div&gt;</code></td></tr>
+        <tr><td><code>&lt;nav&gt;</code></td><td><code>&lt;span&gt;</code></td></tr>
+        <tr><td><code>&lt;main&gt;</code></td><td rowspan="4" style="vertical-align:middle;color:#888;">These carry no inherent meaning.</td></tr>
+        <tr><td><code>&lt;article&gt;</code></td></tr>
+        <tr><td><code>&lt;section&gt;</code></td></tr>
+        <tr><td><code>&lt;footer&gt;</code></td></tr>
+        <tr><td><code>&lt;form&gt;</code></td><td></td></tr>
+        <tr><td><code>&lt;table&gt;</code></td><td></td></tr>
+      </tbody>
+    </table>
+    <pre>/* Prefer semantic markup — it improves SEO and accessibility */
+&lt;article&gt;
+  &lt;header&gt;&lt;h2&gt;Post Title&lt;/h2&gt;&lt;/header&gt;
+  &lt;p&gt;Post content...&lt;/p&gt;
+&lt;/article&gt;</pre>
+  </div>
+
+  <!-- Block vs Inline -->
+  <div class="section">
+    <h2>2. Block vs Inline Tags</h2>
+    <p>
+      <strong>Block-level</strong> elements start on a new line and take the
+      full available width. <strong>Inline</strong> elements sit inside a line
+      of text; width and height are ignored.
+    </p>
+
+    <h3>Block elements (each on its own line):</h3>
+    <div class="block-demo">
+      <div>&lt;div&gt; — generic block container</div>
+      <div>&lt;p&gt; — paragraph</div>
+      <div>&lt;h1&gt; – &lt;h6&gt; — headings</div>
+      <div>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; — lists</div>
+      <div>&lt;table&gt;, &lt;form&gt;, &lt;section&gt;...</div>
+    </div>
+
+    <h3>Inline elements (flow inside text):</h3>
+    <div class="inline-demo">
+      This sentence contains
+      <span>&lt;span&gt;</span>
+      <a href="#">&lt;a&gt;</a>
+      <strong>&lt;strong&gt;</strong>
+      and an inline image — they all sit on the same line.
+    </div>
+
+    <pre>/* Any element's display type can be overridden with CSS */
+span { display: block; }
+div  { display: inline; }</pre>
+  </div>
+
+  <!-- Container vs Empty -->
+  <div class="section">
+    <h2>3. Container Tags vs Empty (Void) Tags</h2>
+    <p>
+      <strong>Container tags</strong> have an opening and closing tag, and can
+      hold child elements. <strong>Void/empty tags</strong> are self-closing and
+      cannot have children.
+    </p>
+
+    <div class="container-demo">
+      <strong>Container:</strong>
+      <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+      <code>&lt;ul&gt;</code>, <code>&lt;table&gt;</code> ...
+    </div>
+
+    <div style="background:#ffe8d6;border:2px solid #e85d04;padding:0.6rem 1rem;border-radius:6px;">
+      <strong>Void / Empty:</strong>
+      <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;br&gt;</code>,
+      <code>&lt;hr&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;link&gt;</code> ...
+    </div>
+
+    <pre>/* Container — wraps other elements */
+&lt;div&gt;
+  &lt;p&gt;I am a child.&lt;/p&gt;
+&lt;/div&gt;
+
+/* Void — no closing tag / no children */
+&lt;img src="photo.jpg" alt="A photo"&gt;
+&lt;input type="text" placeholder="Enter name"&gt;</pre>
+
+    <p>
+      <strong>Note:</strong> The <code>&lt;p&gt;</code> tag is <em>not</em> a
+      container for block-level elements — nesting a <code>&lt;div&gt;</code>
+      or <code>&lt;h3&gt;</code> inside a <code>&lt;p&gt;</code> is invalid HTML.
+    </p>
+  </div>
+
+</body>
+</html>

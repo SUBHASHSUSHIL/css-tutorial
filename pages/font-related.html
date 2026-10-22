@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Properties | CSS Tutorial</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .font-demo {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .font-demo p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* font-family demos */
+    .ff-serif    { font-family: serif; }
+    .ff-sans     { font-family: sans-serif; }
+    .ff-mono     { font-family: monospace; }
+    .ff-cursive  { font-family: cursive; }
+    .ff-fantasy  { font-family: fantasy; }
+
+    /* font-style */
+    .fs-normal   { font-style: normal; }
+    .fs-italic   { font-style: italic; }
+    .fs-oblique  { font-style: oblique; }
+
+    /* font-weight */
+    .fw-100 { font-weight: 100; }
+    .fw-400 { font-weight: 400; }
+    .fw-700 { font-weight: 700; }
+    .fw-900 { font-weight: 900; }
+
+    /* font-variant */
+    .fv-small-caps { font-variant: small-caps; }
+
+    /* font-size */
+    .fsize-small  { font-size: small; }
+    .fsize-medium { font-size: medium; }
+    .fsize-large  { font-size: large; }
+    .fsize-px     { font-size: 24px; }
+    .fsize-rem    { font-size: 1.5rem; }
+    .fsize-pct    { font-size: 150%; }
+
+    /* font-stretch */
+    .fstretch-condensed { font-stretch: condensed; }
+    .fstretch-expanded  { font-stretch: expanded; }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">← Back to Index</a>
+
+  <h1>Font-Related CSS Properties</h1>
+
+  <!-- font-family -->
+  <div class="section">
+    <h2>font-family</h2>
+    <p>
+      Always specify a font stack — multiple fonts separated by commas. The
+      browser uses the first one it finds; the last entry should be a generic
+      family as a fallback.
+    </p>
+    <div class="font-demo">
+      <p class="ff-serif">   font-family: serif</p>
+      <p class="ff-sans">    font-family: sans-serif</p>
+      <p class="ff-mono">    font-family: monospace</p>
+      <p class="ff-cursive"> font-family: cursive</p>
+      <p class="ff-fantasy"> font-family: fantasy</p>
+    </div>
+    <pre>h2 { font-family: 'Georgia', serif; }</pre>
+  </div>
+
+  <!-- font-style -->
+  <div class="section">
+    <h2>font-style</h2>
+    <div class="font-demo">
+      <p class="fs-normal">  font-style: normal</p>
+      <p class="fs-italic">  font-style: italic</p>
+      <p class="fs-oblique"> font-style: oblique</p>
+    </div>
+    <pre>p { font-style: italic; }</pre>
+  </div>
+
+  <!-- font-weight -->
+  <div class="section">
+    <h2>font-weight</h2>
+    <p>Values: <code>normal</code> (400), <code>bold</code> (700), or 100–900 in steps of 100.</p>
+    <div class="font-demo">
+      <p class="fw-100">font-weight: 100 (thin)</p>
+      <p class="fw-400">font-weight: 400 (normal)</p>
+      <p class="fw-700">font-weight: 700 (bold)</p>
+      <p class="fw-900">font-weight: 900 (black)</p>
+    </div>
+    <pre>strong { font-weight: 700; }</pre>
+  </div>
+
+  <!-- font-variant -->
+  <div class="section">
+    <h2>font-variant</h2>
+    <div class="font-demo">
+      <p>Normal: Hello World</p>
+      <p class="fv-small-caps">font-variant: small-caps — Hello World</p>
+    </div>
+    <pre>.abbrev { font-variant: small-caps; }</pre>
+  </div>
+
+  <!-- font-size -->
+  <div class="section">
+    <h2>font-size</h2>
+    <p>Prefer <code>rem</code> for scalability; avoid fixed <code>px</code> for body text.</p>
+    <div class="font-demo">
+      <p class="fsize-small"> font-size: small</p>
+      <p class="fsize-medium">font-size: medium</p>
+      <p class="fsize-large"> font-size: large</p>
+      <p class="fsize-px">    font-size: 24px</p>
+      <p class="fsize-rem">   font-size: 1.5rem</p>
+      <p class="fsize-pct">   font-size: 150%</p>
+    </div>
+    <pre>body  { font-size: 16px; }   /* base */
+h1    { font-size: 2rem; }    /* 32px relative to base */
+small { font-size: 0.8rem; }</pre>
+  </div>
+
+  <!-- font-stretch -->
+  <div class="section">
+    <h2>font-stretch</h2>
+    <p>Requires the font to have a condensed/expanded variant installed on the device.</p>
+    <div class="font-demo">
+      <p class="fstretch-condensed">font-stretch: condensed</p>
+      <p class="fstretch-expanded"> font-stretch: expanded</p>
+    </div>
+    <pre>p { font-stretch: condensed; }</pre>
+  </div>
+
+</body>
+</html>
